@@ -1,0 +1,89 @@
+# Diagrama Arquitetural
+
+```mermaid
+flowchart TD
+
+A[Usuário]
+B[Frontend React]
+C[Backend Node.js]
+D[Banco SQLite]
+
+A --> B
+B --> C
+C --> D
+D --> C
+C --> B
+B --> A
+```
+
+---
+
+# Diagrama MVC
+
+```mermaid
+flowchart TD
+
+A[Usuário]
+B[Controller]
+C[Service]
+D[Repository]
+E[Banco SQLite]
+
+A --> B
+B --> C
+C --> D
+D --> E
+E --> D
+D --> C
+C --> B
+B --> A
+```
+
+---
+
+# Diagrama Factory
+
+```mermaid
+classDiagram
+
+class ConteudoFactory {
+    criarPergunta()
+    criarResposta()
+}
+
+class Pergunta
+class Resposta
+
+ConteudoFactory --> Pergunta
+ConteudoFactory --> Resposta
+```
+
+---
+
+# Diagrama Observer
+
+```mermaid
+classDiagram
+
+class Usuario
+class Notificador
+
+Notificador --> Usuario : notifica
+```
+
+---
+
+# Diagrama Facade
+
+```mermaid
+classDiagram
+
+class ForumFacade {
+    buscarPerguntas()
+    cadastrarPergunta()
+    cadastrarResposta()
+}
+
+ForumFacade --> Backend
+ForumFacade --> Banco
+```
